@@ -15,7 +15,7 @@ classification_report(
 Package for the paper "Why only Micro-F1? Class Weighting of Measures for Relation Classification".
 We provide an extended classification report that gives more F1 scores than only micro, macro and weighted.
 Custom additional weighting schemes can be added to `average_funcs` by defining in `custom_scoring` and giving the string of the function name to `average_funcs`.
-A function added to `custom_scoring` should take an 1d numpy array and return one.
+A function added to `custom_scoring` should take an 1d numpy array of class counts and a numpy array of labels and return (not necessarily normalized) class_weights.
 
 Functionality of `classification_report` should otherwise be identical to the `classification_report` from scikit-learn.
 
