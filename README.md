@@ -1,7 +1,7 @@
 # ⚖ Weighting Schemes Report
 Extend the scikit-learn classification report with custom weighting schemes.
 
-## 🧰 Usage:
+## 🧰 Usage
 ```bash
 from weightings_schemes_report import classification_report
 classification_report(
