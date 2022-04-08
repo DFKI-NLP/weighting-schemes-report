@@ -14,7 +14,7 @@ from sklearn.metrics._classification import (
 )
 from sklearn.utils.multiclass import unique_labels
 
-from weighting_schemes_report import custom_scoring
+import custom_scoring
 
 
 def precision_recall_fscore_average(
@@ -484,17 +484,3 @@ def classification_report(
         return report_dict
     else:
         return report
-
-
-if __name__ == "__main__":
-    labels = np.load("/home/daha02/Projects/ptr/results/tacred1/all_labels.npy")
-    scores = np.load("/home/daha02/Projects/ptr/results/tacred1/scores.npy")
-    results = np.load("/home/daha02/Projects/ptr/results/tacred1/results.npy")
-    preds = np.argmax(scores, axis=1)
-    cr = classification_report(
-        labels,
-        preds,
-        average_funcs=('dodrans', 'entropy'),
-        labels=np.delete(np.arange(42), 13),
-        digits=4
-    )
